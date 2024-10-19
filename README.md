@@ -16,7 +16,7 @@
 - 函数内联
   - 为了方便抽取函数，规定取消所有的函数内联：`-fno-inline-functions`。
 
-### Openpeg
+### openjpeg
 
 - CVE-2017-14151
 - CVE-2017-14152
