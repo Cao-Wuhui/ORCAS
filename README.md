@@ -8,8 +8,8 @@
 
 - 混淆选项
   - 控制流平坦化（Control Flow Flattening）：`-mllvm -fla`
-  - 虚假控制流(Bogus Control Flow)：`-mllvm -bcf`
-  - 指令替换(Instruction Substitution)：`-mllvm -sub`
+  - 虚假控制流（Bogus Control Flow）：`-mllvm -bcf`
+  - 指令替换（Instruction Substitution）：`-mllvm -sub`
   - 全部：包括上述3种方式，即`-mllvm -fla -mllvm -bcf -mllvm -sub`
 - 编译优化
   - `-O3`
@@ -20,3 +20,4 @@
 
 - CVE-2017-14151
 - CVE-2017-14152
+- CVE-2016-4796
