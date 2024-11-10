@@ -2,19 +2,20 @@
 
 ## Dataset
 
-从若干项目中抽取CVE漏洞，每一个项目下都有以`CVEID_项目名称_函数名_优化选项_混淆方式`方式命名的可执行文件的工程包。
+CVE vulnerabilities are selected from multiple projects, with each project containing a package of executable files named in the format: `CVEID_ProjectName_FunctionName_OptimizationOption_ObfuscationMethod`. If there is an `_arm` suffix, the package is for the ARM architecture; otherwise, it is for x86.
 
-为方便使用混淆选项，使用[obfuscator-llvm](https://github.com/obfuscator-llvm/obfuscator)构建x86_64和aarch64 2种指令集架构共计10个实例，每个项目的初定配置如下：
+To facilitate the use of obfuscation options, [obfuscator-llvm](https://github.com/obfuscator-llvm/obfuscator) was used to build a total of 10 instances across two instruction set architectures: x86_64 and aarch64. The initial configuration for each project is as follows:
 
-- 混淆选项
-  - 控制流平坦化（Control Flow Flattening）：`-mllvm -fla`
-  - 虚假控制流（Bogus Control Flow）：`-mllvm -bcf`
-  - 指令替换（Instruction Substitution）：`-mllvm -sub`
-  - 全部：包括上述3种方式，即`-mllvm -fla -mllvm -bcf -mllvm -sub`
-- 编译优化
+- **Obfuscation Options**:
+  - Control Flow Flattening: `-mllvm -fla`
+  - Bogus Control Flow: `-mllvm -bcf`
+  - Instruction Substitution: `-mllvm -sub`
+  - All: Includes all three methods above, i.e., `-mllvm -fla -mllvm -bcf -mllvm -sub`
+- **Compilation Optimization**:
   - `-O3`
-- 函数内联
-  - 为了方便抽取函数，规定取消所有的函数内联：`-fno-inline-functions`。
+- **Function Inlining**:
+  - To facilitate function extraction, all function inlining is disabled: `-fno-inline-functions`.
+
 
 ### [openjpeg](https://github.com/uclouvain/openjpeg)
 
