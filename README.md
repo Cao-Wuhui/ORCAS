@@ -7,10 +7,11 @@ CVE vulnerabilities are selected from multiple projects, with each project conta
 To facilitate the use of obfuscation options, [obfuscator-llvm](https://github.com/obfuscator-llvm/obfuscator) was used to build a total of 10 instances across two instruction set architectures: x86-64 and ARM64. The initial configuration for each project is as follows:
 
 - **Obfuscation Options**:
+  - Without obfuscation option.
   - Control Flow Flattening: `-mllvm -fla`.
   - Bogus Control Flow: `-mllvm -bcf`.
   - Instruction Substitution: `-mllvm -sub`.
-  - All: Includes all three methods above, i.e., `-mllvm -fla -mllvm -bcf -mllvm -sub`.
+  - All: Includes all three methods above, i.e., using `-mllvm -fla -mllvm -bcf -mllvm -sub`.
 - **Compilation Optimization**:
   - `-O0` and `-O3`.
 - **Function Inlining**:
